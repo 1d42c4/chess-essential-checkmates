@@ -1,0 +1,358 @@
+{
+  "number": 8,
+  "slug": "chess-essential-checkmates",
+  "title": "Checkmate Without Stalemate",
+  "goal": "Cover the escape squares, protect the checking piece, and verify the final position.",
+  "lessons": [
+    {
+      "id": "08.1",
+      "title": "Queen and king close the cage",
+      "idea": "A queen can cover many escape squares, but a close-range mating queen often needs the king's protection. Prove mate by checking the defender's complete set of replies.",
+      "facts": [
+        "Black's king is on h8 at the edge of the board.",
+        "White's king on f6 protects g7.",
+        "The queen can move from g6 to g7 without crossing another piece."
+      ],
+      "explain": [
+        "Qg7# places the queen next to the king with protection. The queen checks along g7-h8 and covers h7 and g8. The black king cannot capture the queen on g7 because White's king attacks that square.",
+        "There is no piece available to capture or block the check. The position is mate because the king is in check and has no legal response. Verify those two facts separately; merely trapping a king can also produce stalemate."
+      ],
+      "caution": "An unprotected queen placed next to the enemy king may simply be captured. Always name the piece protecting the mating queen, even when the pattern looks familiar.",
+      "questions": [
+        "Find the matching mating move on the other side of the board.",
+        "Why can Black not capture the queen?",
+        "Which squares around a8 does the queen cover?"
+      ],
+      "answers": [
+        "Qb7# mirrors the model. The queen moves from b6 to b7 and checks the king on a8 diagonally.",
+        "White's king on c6 protects b7. Capturing the queen would move Black's king into an attacked square.",
+        "The queen covers a7, b8 and its own defended square b7. Those are all three on-board neighboring squares available from a8. The king is in check, so no legal move means mate."
+      ],
+      "transfer": "Rebuild both positions from memory. For each mating move, point to every neighboring square of the losing king and explain why it cannot move there.",
+      "recall": [
+        "What protects the queen in Qg7#?",
+        "The white king on f6 protects g7."
+      ],
+      "positions": {
+        "A": {
+          "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "Qg7#",
+          "alternative": "",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.1A",
+            "title": "Queen and king close the cage",
+            "fen": "7k/8/5KQ1/8/8/8/8/8 w - - 0 1",
+            "line": "Qg7#",
+            "bad": "",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qg7#",
+                "score": "#+1",
+                "depth": 18
+              },
+              {
+                "san": "Qh6+",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Qg3",
+                "score": "#+2",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+1",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Qg7#",
+                "win"
+              ]
+            ]
+          }
+        },
+        "B": {
+          "fen": "k7/8/1QK5/8/8/8/8/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "Qb7#",
+          "alternative": "",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.1B",
+            "title": "Queen and king close the cage",
+            "fen": "k7/8/1QK5/8/8/8/8/8 w - - 0 1",
+            "line": "Qb7#",
+            "bad": "",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qb7#",
+                "score": "#+1",
+                "depth": 18
+              },
+              {
+                "san": "Qb3",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Qb2",
+                "score": "#+2",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+1",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Qb7#",
+                "win"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "08.2",
+      "title": "The king must help the rook",
+      "idea": "The rook cuts a rank or file, while the king controls the escape squares beyond that line. Rook mate is a coordination task, not a sequence of random checks.",
+      "facts": [
+        "White's king on g6 controls f7, g7 and h7.",
+        "The rook can reach a8 along the clear a-file.",
+        "A rook on a8 would check across the eighth rank."
+      ],
+      "explain": [
+        "Ra8# checks the king on h8. The rook covers g8, and White's king covers g7 and h7. Black has no piece that can block the rook's line or capture it.",
+        "The king does the work that the rook cannot: it controls the row of escape squares below the checking rank. If the white king were farther away, the same rook check could let the defender escape instead of ending the game."
+      ],
+      "caution": "Do not give the final rook check before your king controls the exit. A check can release the opposing king from the edge if you have not completed the cage.",
+      "questions": [
+        "Why does Rh8+ immediately fail to mate?",
+        "What king move prepares the mating net?",
+        "After the forced king reply, give the mate and explain the division of work."
+      ],
+      "answers": [
+        "After Rh8+, Black can play ...Ka7. White's king on c6 does not attack a7, so the defender can leave the back rank.",
+        "Kb6 controls a7 and b7. Black then has only ...Kb8: a7 is attacked by the king and b7 is also attacked.",
+        "Rh8# now checks along the eighth rank. The rook controls a8 and c8, while the king on b6 controls a7, b7 and c7. The mating net is complete because king and rook cover different escape routes."
+      ],
+      "transfer": "Place the defending king on a different edge square. Before checking with the rook, mark the escape row and move your king to control it.",
+      "recall": [
+        "What should the king do before the final rook check?",
+        "Control the escape squares beyond the rook's checking rank or file."
+      ],
+      "positions": {
+        "A": {
+          "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+          "opening_moves": "",
+          "line": "Ra8#",
+          "alternative": "",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.2A",
+            "title": "The king must help the rook",
+            "fen": "7k/8/6K1/8/8/8/8/R7 w - - 0 1",
+            "line": "Ra8#",
+            "bad": "",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Ra8#",
+                "score": "#+1",
+                "depth": 18
+              },
+              {
+                "san": "Re1",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Ra2",
+                "score": "#+2",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+1",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Ra8#",
+                "win"
+              ]
+            ]
+          }
+        },
+        "B": {
+          "fen": "k7/8/2K5/8/8/8/8/7R w - - 0 1",
+          "opening_moves": "",
+          "line": "Kb6 Kb8 Rh8#",
+          "alternative": "Rh8+ Ka7",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.2B",
+            "title": "The king must help the rook",
+            "fen": "k7/8/2K5/8/8/8/8/7R w - - 0 1",
+            "line": "Kb6 Kb8 Rh8#",
+            "bad": "Rh8+ Ka7",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Kc7",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Kb6",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Rh8+",
+                "score": "#+3",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+2",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Kb6",
+                "win"
+              ],
+              [
+                "Kb8",
+                "win"
+              ],
+              [
+                "Rh8#",
+                "win"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "08.3",
+      "title": "No legal move is not always mate",
+      "idea": "Checkmate requires check. Stalemate occurs when the player to move is not in check but has no legal move; it ends the game as a draw.",
+      "facts": [
+        "Black's king on h8 has only three neighboring squares on the board.",
+        "Qg7 gives check and is protected by White's king.",
+        "Qf7 covers the exits without attacking h8."
+      ],
+      "explain": [
+        "Qg7# wins for the same reason as the first lesson: it checks, covers the exits and cannot be captured. Verify that the move attacks the king itself, not just the surrounding squares.",
+        "Compare Qf7?. The queen covers g8, g7 and h7, so Black has no move. But h8 is not attacked. With no other black pieces or pawns to move, the result is stalemate. A huge material advantage does not override that rule."
+      ],
+      "caution": "Near a bare king, every quiet queen move deserves a stalemate check. Ask \"Is the king in check?\" before asking \"Can the king move?\"",
+      "questions": [
+        "Find a mating move from this new queen square.",
+        "What is wrong with Qc7?",
+        "Explain the result of each move using the two required facts."
+      ],
+      "answers": [
+        "Qb7# is mate. The queen attacks a8 and is protected on b7 by the king on c6.",
+        "Qc7 produces stalemate. It covers a7 along the seventh rank, b8 diagonally and b7 along the rank, but does not attack a8.",
+        "After Qb7, Black is in check and has no legal reply: mate. After Qc7, Black is not in check and has no legal move: draw by stalemate. The absence of a legal move alone does not tell you which result applies."
+      ],
+      "transfer": "Set up a queen-versus-king ending. For each candidate move, label the resulting position \"check,\" \"mate,\" \"stalemate,\" or \"none\" before moving on the board.",
+      "recall": [
+        "What single condition distinguishes mate from stalemate when no legal move exists?",
+        "Whether the side to move is in check: yes means mate; no means stalemate."
+      ],
+      "positions": {
+        "A": {
+          "fen": "7k/4Q3/5K2/8/8/8/8/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "Qg7#",
+          "alternative": "Qf7",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.3A",
+            "title": "No legal move is not always mate",
+            "fen": "7k/4Q3/5K2/8/8/8/8/8 w - - 0 1",
+            "line": "Qg7#",
+            "bad": "Qf7",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qg7#",
+                "score": "#+1",
+                "depth": 18
+              },
+              {
+                "san": "Qa7",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Qb7",
+                "score": "#+2",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+1",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Qg7#",
+                "win"
+              ]
+            ]
+          }
+        },
+        "B": {
+          "fen": "k7/3Q4/2K5/8/8/8/8/8 w - - 0 1",
+          "opening_moves": "",
+          "line": "Qb7#",
+          "alternative": "Qc7",
+          "purpose": "mate",
+          "validation": {
+            "id": "08.3B",
+            "title": "No legal move is not always mate",
+            "fen": "k7/3Q4/2K5/8/8/8/8/8 w - - 0 1",
+            "line": "Qb7#",
+            "bad": "Qc7",
+            "checkmate": true,
+            "stalemate": false,
+            "candidates": [
+              {
+                "san": "Qb7#",
+                "score": "#+1",
+                "depth": 18
+              },
+              {
+                "san": "Kb6",
+                "score": "#+2",
+                "depth": 18
+              },
+              {
+                "san": "Qf7",
+                "score": "#+2",
+                "depth": 18
+              }
+            ],
+            "chosen_score": "#+1",
+            "tablebase": "win",
+            "tablebase_line": [
+              [
+                "Qb7#",
+                "win"
+              ]
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
